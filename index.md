@@ -1,8 +1,10 @@
-## Intelligent parking system
+# Intelligent parking system
 
-You can use the [editor on GitHub](https://github.com/ZhaochengD/Course_Data_Acquisition/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+**Course ID**: 12740
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+**Group ID** : AM
+
+**Group Member**: Zhaocheng Du, Wenying Feng, Zhen Cai
 
 ## 1. Introduction
 
