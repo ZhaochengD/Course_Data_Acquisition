@@ -40,7 +40,7 @@ When the vehicle enters the parking area, the distance detected by ultrasonic se
 ### 2.2 Sensors Used
 
 <p align="center">
-  <img src="./img/Light_Sensor.jpeg" width="200">
+  <img src="./img/Light_Sensor.jpeg" width="150">
 </p>
 
 Photoresistor sensor module
@@ -53,7 +53,7 @@ Parameters:
 * PCB Size : 3.2cm * 1.4cm 
 
 <p align="center">
-  <img src="./img/distance.jpg" width="200">
+  <img src="./img/distance.jpg" width="150">
 </p>
 
 Ultrasonic sensor HC-SRO4
