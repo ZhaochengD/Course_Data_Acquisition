@@ -16,7 +16,7 @@ With the rapid increase in the number of vehicles worldwide, car parking problem
   <img src="./img/Background.jpg" width="350">
 </p>
 
-<p align="center">
+<p align="center" style="font-size:160%;>
   Figure1. Intelligent parking system (conceptual)</center>
 </p>
 
