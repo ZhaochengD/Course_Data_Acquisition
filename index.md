@@ -226,8 +226,8 @@ Again, we want to thank Mario and TA’s help. Because their  advice are very im
 
 ## 6. Reference
 
-[1] Figure1 is from [http://en.cesipc.com/news/7814691171.html]
+[1] Figure1 is from [here][http://en.cesipc.com/news/7814691171.html]
 
-[2] Photoresistor sensor is from [https://www.makerfabs.com/light-sensor-module.html]
+[2] Photoresistor sensor is from [here][https://www.makerfabs.com/light-sensor-module.html]
 
-[3] Ultrasonic sensor HC-SRO4 is from [https://www.kitronik.co.uk/46130-ultrasonic-distance-sensor-hc-sr04-5v-version.html]
+[3] Ultrasonic sensor HC-SRO4 is from [here][https://www.kitronik.co.uk/46130-ultrasonic-distance-sensor-hc-sr04-5v-version.html]
