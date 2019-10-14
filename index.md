@@ -17,7 +17,7 @@ With the rapid increase in the number of vehicles worldwide, car parking problem
 </p>
 
 <p align="center" style="font-size:160%;>
-  Figure1. Intelligent parking system (conceptual)</center>
+  Figure1. Intelligent parking system (conceptual)
 </p>
 
 Our project develops a demo of an intelligent parking system, which includes the nearest parking space location system with route planning, and a corner collision avoidance system. A real scaled-down parking lot model with 16 parking places is created, 4 of which are applied with photosensitive sensors inserted on the ground for vehicle detection. One ultrasonic sensor is applied on the pillar of the entrence for the collision avoidance system. Besides, IOV (Internet of Vehicle) along with audio guide function is also realized in this project through data transmitted from parking system (raspberry pi) to vehicles (use the computer as the vehicle command 
