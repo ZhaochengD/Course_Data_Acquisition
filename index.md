@@ -59,9 +59,9 @@ When the ultrasonic sensor at the corner of the parking area entrance detects th
 ## 3. Progress Report
 
 Firstly, we designed the blueprint of our demo parking lot with CAD. The blueprint of this parking lot is designed with 16 parking spaces and 8 pillars. Four of these parking spaces will be added with the photosensitive sensors in order to fullfill the route planning function. One of these pillars will be equiped with ultrasonic sensor in order to test the collision-avoiding function. The layout of the parking lot is as below (left figure).Since only one photosensitive sensor is provided in the toolkit, we brought other 3 Photoresistor sensors and 5 ultrasonic sensors from the internet. Then we used the carton made the parking lot model based on the blueprint we designed. The model is shown in the figure below (right figure).
-
+<p align="center">
 <img src="./img/two_graph.jpg" width="400">
-
+</p>
 Apart from the physical model. We also abstracted the physical model into a logical model based on the graph theory. We used points representting the entrence of each parking space and the conner. Then we used edges represent the route between different nodes. Finally, we modeled the parking lot with a network. The topology structure of this network is like figure below (left). The right figure below shows the logical model overlay on the CAD blueprint. Once we had this logical model, we could apply many graph algorithms on this parking lot. In this project the most important algorithm is Dijkstra algorithm. For example, We programed some code to find the nearest parking space and the route to it.
 
 <img src="./img/three_graph.jpg" width="400">
