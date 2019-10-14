@@ -12,6 +12,10 @@
 
 With the rapid increase in the number of vehicles worldwide, car parking problem becomes one of the great contributor in congestion and fuel combustion. Due to the limited Parking spaces, current situation of most parking lots is unsatisfying, where accommodation of increasing vehicles is difficult and provides large inconvenience. Therefore, well-managed and convenience-driven car parks need to be developed, preventing problems from worsening. With an efficient and smart parking system, the level of convenience to the drivers will be greatly improved, and the related pollution may also be reduced.
 
+<p align="center">
+  <img src="./img/background.jpg" width="350">
+</p>
+
 Our project develops a demo of an intelligent parking system, which includes the nearest parking space location system with route planning, and a corner collision avoidance system. A real scaled-down parking lot model with 16 parking places is created, 4 of which are applied with photosensitive sensors inserted on the ground for vehicle detection. One ultrasonic sensor is applied on the pillar of the entrence for the collision avoidance system. Besides, IOV (Internet of Vehicle) along with audio guide function is also realized in this project through data transmitted from parking system (raspberry pi) to vehicles (use the computer as the vehicle command 
 
 ### 1.2 Motivation
@@ -31,7 +35,9 @@ When the vehicle enters the parking area, the distance detected by ultrasonic se
 
 ### 2.2 Sensors Used
 
-<img src="./img/Light_Sensor.jpeg" width="200">
+<p align="center">
+  <img src="./img/Light_Sensor.jpeg" width="200">
+</p>
 
 Photoresistor sensor module
 Parameters: 
@@ -42,7 +48,9 @@ Parameters:
 * Has a fixed bolt holes for easy installation 
 * PCB Size : 3.2cm * 1.4cm 
 
-<img src="./img/distance.jpg" width="200">
+<p align="center">
+  <img src="./img/distance.jpg" width="200">
+</p>
 
 Ultrasonic sensor HC-SRO4
 Parameters: 
