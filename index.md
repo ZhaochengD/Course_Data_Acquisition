@@ -40,7 +40,7 @@ Parameters:
 * Has a fixed bolt holes for easy installation 
 * PCB Size : 3.2cm * 1.4cm 
 
-<img src="./img/distance.jpg" width="300">
+<img src="./img/distance.jpg" width="250">
 
 Ultrasonic sensor HC-SRO4
 Parameters: 
