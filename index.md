@@ -40,6 +40,8 @@ Parameters:
 * Has a fixed bolt holes for easy installation 
 * PCB Size : 3.2cm * 1.4cm 
 
+![light_sensor](./img/Light_Sensor.jpeg?raw=true "Title")
+
 Ultrasonic sensor HC-SRO4
 Parameters: 
 *	Use voltage: DC5V 
