@@ -29,7 +29,7 @@ When the vehicle enters the parking area, the distance detected by ultrasonic se
 
 ### 2.2 Sensors Used
 
-![light_sensor](./img/Light_Sensor.jpeg =50x)
+<img src="./img/Light_Sensor.jpeg" width="48">
 
 Photoresistor sensor module
 Parameters: 
