@@ -91,9 +91,9 @@ There is one thing left that even though we have all the sensor in the right pla
   <img src="./img/openchirp.jpeg" width="250">
 </p>
 Then we tested and debugging our code. And finally our project are down. The target parking space is shown in the physical model (the space with lighten LED) and the shortest route is shown in the right. In addition to this. It also equipped with the sound guidance.
-
-<img src="./img/result.jpeg" width="250">
-
+<p align="center">
+  <img src="./img/result.jpeg" width="250">
+</p>
 ## 4. Experiment and result
 
 At first, I ran the openchirp program backstage so the data can be send to the openchirp. We left four empty parking space and launched the program in the server (parking lot) and simulated the first car come into parking lot and launched the route plan program. In terminal it shows like this.
