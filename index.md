@@ -223,3 +223,9 @@ In this project, we learned how to use raspberry pi, how to use sensor and conne
 However, this project also has some drawbacks that can be modified further if given enough time and money. For example, the project assume that all the car are coming sequentially, i.e one car must come until another car has parked. So how to do the parallel route planning is a very important modify point. Another drawback is that it can only plan route from the entrance because we don’t have GPS sensor and cannot know the exact position in the parking lot. It is also because the parking lot model is so small and using a GPS sensor has no meaning. So, if it possible, we would like to practice it in the real life.  Besides, we could design a GUI for the client’s program so everyone can stop looking at the black terminal.
 
 Again, we want to thank Mario and TA’s help. Because their  advice are very important for this project to finish successfully.
+
+## 6. Reference
+
+[1] Figure1 is from http://en.cesipc.com/news/7814691171.html
+[2] Photoresistor sensor is from https://www.makerfabs.com/light-sensor-module.html
+[3] Ultrasonic sensor HC-SRO4 is from https://www.kitronik.co.uk/46130-ultrasonic-distance-sensor-hc-sr04-5v-version.html
