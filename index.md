@@ -60,8 +60,6 @@ When the ultrasonic sensor at the corner of the parking area entrance detects th
 
 Firstly, we designed the blueprint of our demo parking lot with CAD. The blueprint of this parking lot is designed with 16 parking spaces and 8 pillars. Four of these parking spaces will be added with the photosensitive sensors in order to fullfill the route planning function. One of these pillars will be equiped with ultrasonic sensor in order to test the collision-avoiding function. The layout of the parking lot is as below (left figure).Since only one photosensitive sensor is provided in the toolkit, we brought other 3 Photoresistor sensors and 5 ultrasonic sensors from the internet. Then we used the carton made the parking lot model based on the blueprint we designed. The model is shown in the figure below (right figure).
 
-<img src="./img/test.jpg" width="550">
-
 Apart from the physical model. We also abstracted the physical model into a logical model based on the graph theory. We used points representting the entrence of each parking space and the conner. Then we used edges represent the route between different nodes. Finally, we modeled the parking lot with a network. The topology structure of this network is like figure below (left). The right figure below shows the logical model overlay on the CAD blueprint. Once we had this logical model, we could apply many graph algorithms on this parking lot. In this project the most important algorithm is Dijkstra algorithm. For example, We programed some code to find the nearest parking space and the route to it.
 
 <img src="./img/distance.jpg" width="200">
@@ -101,6 +99,8 @@ At first, I ran the openchirp program backstage so the data can be send to the o
 Then if I enter the “NEV” command, the route planning, the nearest parking space selection and route planning program would launch and do the route planning function. In this situation, the nearest parking space is 26 so the program in the car’s system would plot the shortest route to 26 parking space and meanwhile the server would send out the signal to light up the LED light in the parking lot. There is also voice direction “Your nearest parking space is 26”. 
 
 Then the car knows the nearest parking space. It will drive to that parking space. During driving, it will encounter some pillars that will scratch the surface of the car which is very dangerous. So the ultrasonic sensor would send warning signal to the car. In the car terminal, the dangerous pillar would be plotted with a red cross and voice would broadcast “Warning, too close to pillars”. The figure below shows this situation.
+
+<img src="./img/test.jpg" width="550">
 
 If a car entered the navigated parking lot, the light sensor would detected the car has arrived and 
 Send “stop” signal to the car. The terminal of car would shut up the navigation map automatically and broadcast “Your navigation has ended”. The sever would shut down the LED light. Just like the figure below.
