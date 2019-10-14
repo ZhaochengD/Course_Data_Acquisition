@@ -96,7 +96,11 @@ Then we tested and debugging our code. And finally our project are down. The tar
 
 At first, I ran the openchirp program backstage so the data can be send to the openchirp. We left four empty parking space and launched the program in the server (parking lot) and simulated the first car come into parking lot and launched the route plan program. In terminal it shows like this.
 
+<img src="./img/client_server.jpg" width="550">
+
 Then if I enter the “NEV” command, the route planning, the nearest parking space selection and route planning program would launch and do the route planning function. In this situation, the nearest parking space is 26 so the program in the car’s system would plot the shortest route to 26 parking space and meanwhile the server would send out the signal to light up the LED light in the parking lot. There is also voice direction “Your nearest parking space is 26”. 
+
+<img src="./img/test_26.jpg" width="550">
 
 Then the car knows the nearest parking space. It will drive to that parking space. During driving, it will encounter some pillars that will scratch the surface of the car which is very dangerous. So the ultrasonic sensor would send warning signal to the car. In the car terminal, the dangerous pillar would be plotted with a red cross and voice would broadcast “Warning, too close to pillars”. The figure below shows this situation.
 
@@ -105,9 +109,15 @@ Then the car knows the nearest parking space. It will drive to that parking spac
 If a car entered the navigated parking lot, the light sensor would detected the car has arrived and 
 Send “stop” signal to the car. The terminal of car would shut up the navigation map automatically and broadcast “Your navigation has ended”. The sever would shut down the LED light. Just like the figure below.
 
+<img src="./img/test_full.jpg" width="550">
+
 Then if a new car is coming, and connect to the server again, it will do the navigation again. Here it didn’t consider the parking space 26 and choose 17 directly because we have parked a car on 26 parking space directly. The figure is shown as below.
 
+<img src="./img/test_17.jpg" width="550">
+
 If the new-coming car parked in the parking space 17, which means that this parking space don’t have empty parking space anymore. In this situation, the route plan system don’t plan route anymore and broadcast “The parking lot is full” and be shut down after ten minutes automatically. Meanwhile, the server won’t light up any LED light because no empty parking lot remain. The figure is show as below. 
+
+<img src="./img/test_full.jpg" width="550">
 
 Until now, the teat has ended.
 
