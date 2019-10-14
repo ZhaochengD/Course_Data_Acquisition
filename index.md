@@ -130,17 +130,3 @@ In this project, we learned how to use raspberry pi, how to use sensor and conne
 However, this project also has some drawbacks that can be modified further if given enough time and money. For example, the project assume that all the car are coming sequentially, i.e one car must come until another car has parked. So how to do the parallel route planning is a very important modify point. Another drawback is that it can only plan route from the entrance because we don’t have GPS sensor and cannot know the exact position in the parking lot. It is also because the parking lot model is so small and using a GPS sensor has no meaning. So, if it possible, we would like to practice it in the real life.  Besides, we could design a GUI for the client’s program so everyone can stop looking at the black terminal.
 
 Again, we want to thank Mario and TA’s help. Because their  advice are very important for this project to finish successfully.
-
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ZhaochengD/Course_Data_Acquisition/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
