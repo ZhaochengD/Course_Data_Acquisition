@@ -73,67 +73,146 @@ When the ultrasonic sensor at the corner of the parking area entrance detects th
 ## 3. Progress Report
 
 Firstly, we designed the blueprint of our demo parking lot with CAD. The blueprint of this parking lot is designed with 16 parking spaces and 8 pillars. Four of these parking spaces will be added with the photosensitive sensors in order to fullfill the route planning function. One of these pillars will be equiped with ultrasonic sensor in order to test the collision-avoiding function. The layout of the parking lot is as below (left figure).Since only one photosensitive sensor is provided in the toolkit, we brought other 3 Photoresistor sensors and 5 ultrasonic sensors from the internet. Then we used the carton made the parking lot model based on the blueprint we designed. The model is shown in the figure below (right figure).
+
 <p align="center">
   <img src="./img/two_graph.jpg" width="350">
 </p>
+
+<p align="center">
+  Figure3.1 Layout of the parking space
+</p>
+
 Apart from the physical model. We also abstracted the physical model into a logical model based on the graph theory. We used points representting the entrence of each parking space and the conner. Then we used edges represent the route between different nodes. Finally, we modeled the parking lot with a network. The topology structure of this network is like figure below (left). The right figure below shows the logical model overlay on the CAD blueprint. Once we had this logical model, we could apply many graph algorithms on this parking lot. In this project the most important algorithm is Dijkstra algorithm. For example, We programed some code to find the nearest parking space and the route to it.
+
 <p align="center">
   <img src="./img/concat2.jpeg" width="500">
 </p>
+
+<p align="center">
+  Figure3.2 Construction the network of parking space
+</p>
+
 The next step is linking the logical model stored in the computer with the physical parking model using sensor techniques and data transmitting techniques. The first one we fullfilled is data transmitting which implement the function that transmit data from raspberry pi to PC using socket programming. We sent these data because we treat our PC as the embedded operating system in the privat car and treat the raspberry pi as the server used in the parking lot. The parking lot (raspberry pi) server will send the parking space information and collision information to the car (PC) so the car can make its own adjustment. The protocol is designed like the below figure After the design the car (PC) can receive the data sensored from the parking lot (raspberry pi) and knew its route planning information. in order to improve the user-friendly experience, we also added voice assistance for different events.
+
 <p align="center">
   <img src="./img/communication.jpeg" width="200">
 </p>
+
+<p align="center">
+  Figure3.3 The communication protocal designed by us
+</p>
+
 Then we designed different classes for different actuator including a light sensor class, a Ultrasonic sensor class and a LED class. Each class links a specific actuator and a specific parking space. The UML graph of these three classes are provided as below. This design enables us to link every light sensor to the parking space id and every Ultrasonic sensor to the pillar id. For example, a light sensor who connect to the channel 0 of MCP3008 and indicate whether there is a car in parking space 17 has the LightSensor.channel as 0 and LightSensor.stop_id as 17. If there is car in this parking space, the LightSensor.is_empty would be 1 else 0.
+
 <p align="center">
   <img src="./img/sensorclass.jpeg" width="400">
 </p>
+
+<p align="center">
+  Figure3.4 The UML diagram of differnence sensors
+</p>
+
 After assigned each class to each sensor. The next question we solved is the multiple data transmission problem. Since the server (Pi) would receive data from four light sensors and we Ultrasonic sensor. It has to encode this information and send to the private car (local computer) and also the private car needs to decode these data. Thus, we used the dictionary structure in python to store these data sensed in the server and send them to private car. And the car will do the data processing and find the shortest path. The structure and transmission procedure like below.
+
 <p align="center">
   <img src="./img/transmission.jpeg" width="400">
 </p>
+
+
+<p align="center">
+  Figure3.5  The data sending procedure
+</p>
+
 After deployed all the programming part. We connect the circuit. The circuit including four light sensors, four LED lights and one Ultrasonic sensor. In these actuators, four light sensors are used to sense the light intensity in four parking space. Four LED lights are used to show the nearest parking space for cars (i.e if a car enter the parking lot, the LED on the nearest parking space would be lighten, if the car had parked on the nearest parking space the LED light would be switch off). One ultrasonic sensor is installed on a pillar that near the entrance. It will sense the distance between pillars and the car. The circuit is connected as below.
+
 <p align="center">
   <img src="./img/circuit.jpeg" width="250">
 </p>
+
+<p align="center">
+  Figure3.6 The connected circuit
+</p>
+
 Then we connected the circuit with our physical parking model. We linked the circuit with our physical parking model so that all the sensors are in the right places. In the following model. The circuit and Pi is hidden beneath the ground (see right figure) and all the actuators can access from the hole on the ground. We left four empty parking space to do the test and each parking space is equipped with one LED light and one light sensor (green box). And the pillar near the entrance is equipped with one ultrasonic (red circle).
+
 <p align="center">
   <img src="./img/three_demesion.jpg" width="400">
 </p>
+
+<p align="center">
+  Figure3.7 The physical model connected with circuit
+</p>
+
 There is one thing left that even though we have all the sensor in the right place and the sensor can work correctly, people cannot see the sensed data in real time. We try to connect all the light sensors to the openchirp website so all the light sensor data can be visualized on the openchirp website. We first used “wget” command download the “cacert.pem” file from the website. Then followed the tutorial set up our first device and used the template code fullfuilled the function of transmitting data to the openchirp website. The graph below is the visualization of light sensor.
+
 <p align="center">
   <img src="./img/openchirp.jpeg" width="250">
 </p>
+
+<p align="center">
+  Figure3.8 The openchirp interface  
+</p>
+
 Then we tested and debugging our code. And finally our project are down. The target parking space is shown in the physical model (the space with lighten LED) and the shortest route is shown in the right. In addition to this. It also equipped with the sound guidance.
+
 <p align="center">
   <img src="./img/result.jpeg" width="250">
 </p>
+
+<p align="center">
+  Figure3.9 This project  
+</p>
+
 ## 4. Experiment and result
 
 At first, I ran the openchirp program backstage so the data can be send to the openchirp. We left four empty parking space and launched the program in the server (parking lot) and simulated the first car come into parking lot and launched the route plan program. In terminal it shows like this.
 
 <img src="./img/client_server.jpg" width="550">
 
+<p align="center">
+  Figure4.1 The ternimal in car (client) and server (Pi)  
+</p>
+
 Then if I enter the “NEV” command, the route planning, the nearest parking space selection and route planning program would launch and do the route planning function. In this situation, the nearest parking space is 26 so the program in the car’s system would plot the shortest route to 26 parking space and meanwhile the server would send out the signal to light up the LED light in the parking lot. There is also voice direction “Your nearest parking space is 26”. 
 
 <img src="./img/test_26.jpg" width="550">
 
+<p align="center">
+  Figure4.2 Experiment process step 1  
+</p>
+
 Then the car knows the nearest parking space. It will drive to that parking space. During driving, it will encounter some pillars that will scratch the surface of the car which is very dangerous. So the ultrasonic sensor would send warning signal to the car. In the car terminal, the dangerous pillar would be plotted with a red cross and voice would broadcast “Warning, too close to pillars”. The figure below shows this situation.
 
 <img src="./img/test.jpg" width="550">
+
+<p align="center">
+  Figure4.3 Experiment process step 2  
+</p>
 
 If a car entered the navigated parking lot, the light sensor would detected the car has arrived and 
 Send “stop” signal to the car. The terminal of car would shut up the navigation map automatically and broadcast “Your navigation has ended”. The sever would shut down the LED light. Just like the figure below.
 
 <img src="./img/test_full.jpg" width="550">
 
+<p align="center">
+  Figure4.4 Experiment process step 3
+</p>
+
 Then if a new car is coming, and connect to the server again, it will do the navigation again. Here it didn’t consider the parking space 26 and choose 17 directly because we have parked a car on 26 parking space directly. The figure is shown as below.
 
 <img src="./img/test_17.jpg" width="550">
 
+<p align="center">
+  Figure4.5 Experiment process step 4
+</p>
+
 If the new-coming car parked in the parking space 17, which means that this parking space don’t have empty parking space anymore. In this situation, the route plan system don’t plan route anymore and broadcast “The parking lot is full” and be shut down after ten minutes automatically. Meanwhile, the server won’t light up any LED light because no empty parking lot remain. The figure is show as below. 
 
 <img src="./img/test_full.jpg" width="550">
+
+<p align="center">
+  Figure4.6 Experiment process step 5
+</p>
 
 Until now, the teat has ended.
 
