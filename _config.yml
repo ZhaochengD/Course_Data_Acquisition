@@ -2,3 +2,4 @@ theme: jekyll-theme-minimal
 title: Intelligent parking system (A demo)
 logo: ./img/member.jpeg
 description: An raspberry pi based IoT device for nearest parking space searching and route planning
+show_downloads: true
