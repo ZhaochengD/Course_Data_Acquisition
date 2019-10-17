@@ -13,7 +13,7 @@
 
 ### 1.1 Background
 
-With the rapid increase in the number of vehicles worldwide, car parking problem becomes one of the great contributor in congestion and fuel combustion. Due to the limited Parking spaces, current situation of most parking lots is unsatisfying, where accommodation of increasing vehicles is difficult and provides large inconvenience. Therefore, well-managed and convenience-driven car parks need to be developed, preventing problems from worsening. With an efficient and smart parking system, the level of convenience to the drivers will be greatly improved, and the related pollution may also be reduced. The figure below is from [this website](http://en.cesipc.com/news/7814691171.html)
+With the rapid increase in the number of vehicles worldwide, car parking problem becomes one of the great contributor in congestion and fuel combustion. Due to the limited Parking spaces, current situation of most parking lots is unsatisfying, where accommodation of increasing vehicles is difficult and provides large inconvenience. Therefore, well-managed and convenience-driven car parks need to be developed, preventing problems from worsening. With an efficient and smart parking system, the level of convenience to the drivers will be greatly improved, and the related pollution may also be reduced. The figure below is from [this website](http://en.cesipc.com/news/7814691171.html).
 
 <p align="center">
   <img src="./img/Background.jpg" width="350">
@@ -23,7 +23,7 @@ With the rapid increase in the number of vehicles worldwide, car parking problem
   Figure1. Intelligent parking system (conceptual）
 </p>
 
-Our project develops a demo of an intelligent parking system, which includes the nearest parking space location system with route planning, and a corner collision avoidance system. A real scaled-down parking lot model with 16 parking places is created, 4 of which are applied with photosensitive sensors inserted on the ground for vehicle detection. One ultrasonic sensor is applied on the pillar of the entrence for the collision avoidance system. Besides, IOV (Internet of Vehicle) along with audio guide function is also realized in this project through data transmitted from parking system (raspberry pi) to vehicles (use the computer as the vehicle command 
+Our project develops a demo of an intelligent parking system, which includes the nearest parking space location system with route planning, and a corner collision avoidance system. A real scaled-down parking lot model with 16 parking places is created, 4 of which are applied with photosensitive sensors inserted on the ground for vehicle detection. One ultrasonic sensor is applied on the pillar of the entrence for the collision avoidance system. Besides, IOV (Internet of Vehicle) along with audio guide function is also realized in this project through data transmitted from parking system (raspberry pi) to vehicles (use the computer as the vehicle command.
 
 ### 1.2 Motivation
 
@@ -111,7 +111,7 @@ The next step is linking the logical model stored in the computer with the physi
   Figure3.3 The communication protocal designed by us
 </p>
 
-Then we designed different classes for different actuator including a light sensor class, a Ultrasonic sensor class and a LED class. Each class links a specific channel and a specific parking space. The UML graph of these three classes are provided in figure3.4. This design enables us to link every light sensor to the parking space id and every Ultrasonic sensor to the pillar id. For example, a light sensor who connect to the channel 0 of MCP3008 and indicate whether there is a car in parking space 17 has the `LightSensor.channel = 0` and `LightSensor.stop_id=17`. If there is car in this parking space, the LightSensor.is_empty would be 1 else 0. Click [here](https://www.sparkfun.com/products/9590) to view the original LED light figure
+Then we designed different classes for different actuator including a light sensor class, a Ultrasonic sensor class and a LED class. Each class links a specific channel and a specific parking space. The UML graph of these three classes are provided in figure3.4. This design enables us to link every light sensor to the parking space id and every Ultrasonic sensor to the pillar id. For example, a light sensor who connect to the channel 0 of MCP3008 and indicate whether there is a car in parking space 17 has the `LightSensor.channel = 0` and `LightSensor.stop_id=17`. If there is car in this parking space, the LightSensor.is_empty would be 1 else 0. Click [here](https://www.sparkfun.com/products/9590) to view the original LED light figure.
 
 <p align="center">
   <img src="./img/sensorclass.jpeg" width="400">
@@ -227,7 +227,7 @@ Until now, the teat has ended.
 
 ## 5. Discussion
 
-In this project, we learned how to use raspberry pi, how to use sensor and connect circuit. We also learned how to do the IoT stuffs like using the openchirp do the real-time visualization and using socket to do the interdevice communication. And used our previous knowledge (like route planning) did this project that is very useful in the practical life and also let us know the data science progress better
+In this project, we learned how to use raspberry pi, how to use sensor and connect circuit. We also learned how to do the IoT stuffs like using the openchirp do the real-time visualization and using socket to do the interdevice communication. And used our previous knowledge (like route planning) did this project that is very useful in the practical life and also let us know the data science progress better.
 
 However, this project also has some drawbacks that can be modified further if given enough time and money. For example, the project assume that all the car are coming sequentially, i.e one car must come until another car has parked. So how to do the parallel route planning is a very important modify point. Another drawback is that it can only plan route from the entrance because we don’t have GPS sensor and cannot know the exact position in the parking lot. It is also because the parking lot model is so small and using a GPS sensor has no meaning. So, if it possible, we would like to practice it in the real life.  Besides, we could design a GUI for the client’s program so everyone can stop looking at the black terminal.
 
