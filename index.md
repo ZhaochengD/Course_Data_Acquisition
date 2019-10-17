@@ -47,7 +47,9 @@ When the vehicle enters the parking area, the distance detected by ultrasonic se
 </p>
 
 Photoresistor sensor module
+
 Click [here](https://www.makerfabs.com/light-sensor-module.html) to view original figure
+
 Parameters: 
 * Can detect the brightness and the ambient light intensity
 * Adjustable sensitivity
@@ -61,7 +63,9 @@ Parameters:
 </p>
 
 Ultrasonic sensor HC-SRO4
+
 Click [here](https://www.kitronik.co.uk/46130-ultrasonic-distance-sensor-hc-sr04-5v-version.html) to view original figure
+
 Parameters: 
 *	Use voltage: DC5V 
 *	Quiescent current: less than 2mA 
