@@ -11,14 +11,14 @@
 
 ### 1.1 Background
 
-With the rapid increase in the number of vehicles worldwide, car parking problem becomes one of the great contributor in congestion and fuel combustion. Due to the limited Parking spaces, current situation of most parking lots is unsatisfying, where accommodation of increasing vehicles is difficult and provides large inconvenience. Therefore, well-managed and convenience-driven car parks need to be developed, preventing problems from worsening. With an efficient and smart parking system, the level of convenience to the drivers will be greatly improved, and the related pollution may also be reduced.
+With the rapid increase in the number of vehicles worldwide, car parking problem becomes one of the great contributor in congestion and fuel combustion. Due to the limited Parking spaces, current situation of most parking lots is unsatisfying, where accommodation of increasing vehicles is difficult and provides large inconvenience. Therefore, well-managed and convenience-driven car parks need to be developed, preventing problems from worsening. With an efficient and smart parking system, the level of convenience to the drivers will be greatly improved, and the related pollution may also be reduced. The figure below is from [this website](http://www.google.com/)
 
 <p align="center">
   <img src="./img/Background.jpg" width="350">
 </p>
 
 <p align="center">
-  Figure1. Intelligent parking system (conceptual)
+  Figure1. Intelligent parking system (conceptual）
 </p>
 
 Our project develops a demo of an intelligent parking system, which includes the nearest parking space location system with route planning, and a corner collision avoidance system. A real scaled-down parking lot model with 16 parking places is created, 4 of which are applied with photosensitive sensors inserted on the ground for vehicle detection. One ultrasonic sensor is applied on the pillar of the entrence for the collision avoidance system. Besides, IOV (Internet of Vehicle) along with audio guide function is also realized in this project through data transmitted from parking system (raspberry pi) to vehicles (use the computer as the vehicle command 
