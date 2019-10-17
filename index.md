@@ -8,7 +8,8 @@
 
 {% include youtubePlayer.html id=page.youtubeId %}
 
-\newline
+<br />  
+  
 
 ## 1. Introduction
 
