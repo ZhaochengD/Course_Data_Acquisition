@@ -6,12 +6,14 @@
 
 **Group Member**: Zhaocheng Du, Wenying Feng, Zhen Cai
 
+**Video Link**: [Click here](https://www.youtube.com/watch?v=oXcWU0CFHwE&t=9s)
+
 {% include youtubePlayer.html id=page.youtubeId %}<br />  
 ## 1. Introduction
 
 ### 1.1 Background
 
-With the rapid increase in the number of vehicles worldwide, car parking problem becomes one of the great contributor in congestion and fuel combustion. Due to the limited Parking spaces, current situation of most parking lots is unsatisfying, where accommodation of increasing vehicles is difficult and provides large inconvenience. Therefore, well-managed and convenience-driven car parks need to be developed, preventing problems from worsening. With an efficient and smart parking system, the level of convenience to the drivers will be greatly improved, and the related pollution may also be reduced. The figure below is from [this website](http://www.google.com/)
+With the rapid increase in the number of vehicles worldwide, car parking problem becomes one of the great contributor in congestion and fuel combustion. Due to the limited Parking spaces, current situation of most parking lots is unsatisfying, where accommodation of increasing vehicles is difficult and provides large inconvenience. Therefore, well-managed and convenience-driven car parks need to be developed, preventing problems from worsening. With an efficient and smart parking system, the level of convenience to the drivers will be greatly improved, and the related pollution may also be reduced. The figure below is from [this website](http://en.cesipc.com/news/7814691171.html)
 
 <p align="center">
   <img src="./img/Background.jpg" width="350">
@@ -45,6 +47,7 @@ When the vehicle enters the parking area, the distance detected by ultrasonic se
 </p>
 
 Photoresistor sensor module
+Click [here](https://www.makerfabs.com/light-sensor-module.html) to view original figure
 Parameters: 
 * Can detect the brightness and the ambient light intensity
 * Adjustable sensitivity
@@ -58,6 +61,7 @@ Parameters:
 </p>
 
 Ultrasonic sensor HC-SRO4
+Click [here](https://www.kitronik.co.uk/46130-ultrasonic-distance-sensor-hc-sr04-5v-version.html) to view original figure
 Parameters: 
 *	Use voltage: DC5V 
 *	Quiescent current: less than 2mA 
