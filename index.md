@@ -7,7 +7,6 @@
 **Group Member**: Zhaocheng Du, Wenying Feng, Zhen Cai
 
 {% include youtubePlayer.html id=page.youtubeId %}<br />  
-
 ## 1. Introduction
 
 ### 1.1 Background
