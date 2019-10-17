@@ -9,7 +9,6 @@
 {% include youtubePlayer.html id=page.youtubeId %}
 
 <br />  
-  
 
 ## 1. Introduction
 
