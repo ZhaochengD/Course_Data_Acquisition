@@ -70,9 +70,9 @@ Parameters:
 
 When the ultrasonic sensor at the corner of the parking area entrance detects that the distance is less than the width of the entrance, it will automatically start planning the route for the entering vehicle. When the light sensor on the parking spot returns a signal that no light can be detected, the parking system will consider that the parking space has been parked. Map of this parking area has been stored in the parking system already and algorithms are used to calculate the nearest parking space and the shortest route whenever a vehicle is detected entering. At the same time, if the distance detected by the ultrasonic at the entrance is less than a certain value, an anti-friction alarm will pop up on the user interface and return the minimum distance.
 
-## 3. Progress Report
+## 3. Project design
 
-Firstly, we designed the blueprint of our demo parking lot with CAD. The blueprint of this parking lot is designed with 16 parking spaces and 8 pillars. Four of these parking spaces will be added with the photosensitive sensors in order to fullfill the route planning function. One of these pillars will be equiped with ultrasonic sensor in order to test the collision-avoiding function. The layout of the parking lot is as below (left figure).Since only one photosensitive sensor is provided in the toolkit, we brought other 3 Photoresistor sensors and 5 ultrasonic sensors from the internet. Then we used the carton made the parking lot model based on the blueprint we designed. The model is shown in the figure below (right figure).
+Firstly, we designed the blueprint of our demo parking lot with CAD. The blueprint of this parking lot is designed with 16 parking spaces and 8 pillars. Four of these parking spaces will be added with the photosensitive sensors in order to fullfill the route planning function. One of these pillars will be equiped with ultrasonic sensor in order to test the collision-avoiding function. The layout of the parking lot is as figure3.1 (left). Since only one photosensitive sensor is provided in the toolkit, we brought other 3 Photoresistor sensors and one ultrasonic sensors from the internet. Then we used the carton made the parking lot model based on the blueprint we designed. The model is shown in the figure3.1 (right).
 
 <p align="center">
   <img src="./img/two_graph.jpg" width="350">
@@ -82,7 +82,7 @@ Firstly, we designed the blueprint of our demo parking lot with CAD. The bluepri
   Figure3.1 Layout of the parking space
 </p>
 
-Apart from the physical model. We also abstracted the physical model into a logical model based on the graph theory. We used points representting the entrence of each parking space and the conner. Then we used edges represent the route between different nodes. Finally, we modeled the parking lot with a network. The topology structure of this network is like figure below (left). The right figure below shows the logical model overlay on the CAD blueprint. Once we had this logical model, we could apply many graph algorithms on this parking lot. In this project the most important algorithm is Dijkstra algorithm. For example, We programed some code to find the nearest parking space and the route to it.
+Apart from the physical model. We also abstracted the physical model into a logical model based on the graph theory. We used points representting the entrence of each parking space and the conner. Then we used edges represent the route between different nodes. Finally, we modeled the parking lot with a network. The topology structure of this network is like figure3.2 (left). The center figure below shows the logical model overlay on the CAD blueprint. Once we had this logical model, we could apply many graph algorithms on this parking lot. In this project the most important algorithm is Dijkstra algorithm. For example, We programed some code to find the nearest parking space and the route to it which is shown in the right figure.
 
 <p align="center">
   <img src="./img/concat2.jpeg" width="500">
@@ -92,7 +92,7 @@ Apart from the physical model. We also abstracted the physical model into a logi
   Figure3.2 Construction the network of parking space
 </p>
 
-The next step is linking the logical model stored in the computer with the physical parking model using sensor techniques and data transmitting techniques. The first one we fullfilled is data transmitting which implement the function that transmit data from raspberry pi to PC using socket programming. We sent these data because we treat our PC as the embedded operating system in the privat car and treat the raspberry pi as the server used in the parking lot. The parking lot (raspberry pi) server will send the parking space information and collision information to the car (PC) so the car can make its own adjustment. The protocol is designed like the below figure After the design the car (PC) can receive the data sensored from the parking lot (raspberry pi) and knew its route planning information. in order to improve the user-friendly experience, we also added voice assistance for different events.
+The next step is linking the logical model stored in the computer with the physical parking model using sensor techniques and data transmitting techniques. The first one we fullfilled is data transmitting which implement the function that transmit data from raspberry pi to PC using socket programming. We sent these data because we treat our PC as the embedded operating system in the privat car and treat the raspberry pi as the server used in the parking lot. The parking lot (raspberry pi) server will send the parking space information and collision information to the car (PC) so the car can make its own adjustment. The protocol is designed like the below figure After the design the car (PC) can receive the data sensored from the parking lot (raspberry pi) and knew its route planning information. in order to improve the user-friendly experience, we also added voice assistance for different events. Below is the communication protocal we designed.
 
 <p align="center">
   <img src="./img/communication.jpeg" width="200">
@@ -102,7 +102,7 @@ The next step is linking the logical model stored in the computer with the physi
   Figure3.3 The communication protocal designed by us
 </p>
 
-Then we designed different classes for different actuator including a light sensor class, a Ultrasonic sensor class and a LED class. Each class links a specific actuator and a specific parking space. The UML graph of these three classes are provided as below. This design enables us to link every light sensor to the parking space id and every Ultrasonic sensor to the pillar id. For example, a light sensor who connect to the channel 0 of MCP3008 and indicate whether there is a car in parking space 17 has the LightSensor.channel as 0 and LightSensor.stop_id as 17. If there is car in this parking space, the LightSensor.is_empty would be 1 else 0.
+Then we designed different classes for different actuator including a light sensor class, a Ultrasonic sensor class and a LED class. Each class links a specific channel and a specific parking space. The UML graph of these three classes are provided in figure3.4. This design enables us to link every light sensor to the parking space id and every Ultrasonic sensor to the pillar id. For example, a light sensor who connect to the channel 0 of MCP3008 and indicate whether there is a car in parking space 17 has the `LightSensor.channel = 0` and `LightSensor.stop_id=17`. If there is car in this parking space, the LightSensor.is_empty would be 1 else 0.
 
 <p align="center">
   <img src="./img/sensorclass.jpeg" width="400">
@@ -112,7 +112,7 @@ Then we designed different classes for different actuator including a light sens
   Figure3.4 The UML diagram of differnence sensors
 </p>
 
-After assigned each class to each sensor. The next question we solved is the multiple data transmission problem. Since the server (Pi) would receive data from four light sensors and we Ultrasonic sensor. It has to encode this information and send to the private car (local computer) and also the private car needs to decode these data. Thus, we used the dictionary structure in python to store these data sensed in the server and send them to private car. And the car will do the data processing and find the shortest path. The structure and transmission procedure like below.
+After assigned each class to each sensor. The next question we solved is the multiple data transmission problem. Since the server (Pi) would receive data from four light sensors and we Ultrasonic sensor. It has to encode this information and send to the private car (local computer) and also the private car needs to decode these data. Thus, we used the dictionary structure in python to store these data sensed in the server and send them to private car. And the car will do the data processing and find the shortest path. The data structure and transmission procedure is shown in figure3.5.
 
 <p align="center">
   <img src="./img/transmission.jpeg" width="400">
@@ -133,7 +133,7 @@ After deployed all the programming part. We connect the circuit. The circuit inc
   Figure3.6 The connected circuit
 </p>
 
-Then we connected the circuit with our physical parking model. We linked the circuit with our physical parking model so that all the sensors are in the right places. In the following model. The circuit and Pi is hidden beneath the ground (see right figure) and all the actuators can access from the hole on the ground. We left four empty parking space to do the test and each parking space is equipped with one LED light and one light sensor (green box). And the pillar near the entrance is equipped with one ultrasonic (red circle).
+Then we connected the circuit with our physical parking model. We linked the circuit with our physical parking model so that all the sensors are in the right places. In the following model. The circuit and Pi is hidden beneath the ground see figure3.7 (right) and all the actuators can access from the hole on the ground. We left four empty parking space to do the test and each parking space is equipped with one LED light and one light sensor (green box). And the pillar near the entrance is equipped with one ultrasonic (red circle).
 
 <p align="center">
   <img src="./img/three_demesion.jpg" width="400">
@@ -143,7 +143,7 @@ Then we connected the circuit with our physical parking model. We linked the cir
   Figure3.7 The physical model connected with circuit
 </p>
 
-There is one thing left that even though we have all the sensor in the right place and the sensor can work correctly, people cannot see the sensed data in real time. We try to connect all the light sensors to the openchirp website so all the light sensor data can be visualized on the openchirp website. We first used “wget” command download the “cacert.pem” file from the website. Then followed the tutorial set up our first device and used the template code fullfuilled the function of transmitting data to the openchirp website. The graph below is the visualization of light sensor.
+There is one thing left that even though we have all the sensor in the right place and the sensor can work correctly, people cannot see the sensed data in real time. We try to connect all the light sensors to the openchirp website so all the light sensor data can be visualized on the openchirp website. We first used “wget” command download the “cacert.pem” file from the website. Then followed the tutorial set up our first device and used the template code fullfuilled the function of transmitting data to the openchirp website. The figure below is the visualization of light sensor.
 
 <p align="center">
   <img src="./img/openchirp.jpeg" width="250">
