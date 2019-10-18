@@ -8,6 +8,8 @@
 
 **Video Link**: [Click here](https://www.youtube.com/watch?v=oXcWU0CFHwE&t=9s)
 
+**Openchirp Link**: [Click here](https://openchirp.io/home/device/5da09f0c466cc60c381e0c5b#security)
+
 {% include youtubePlayer.html id=page.youtubeId %}<br />  
 ## 1. Introduction
 
