@@ -81,7 +81,7 @@ When the ultrasonic sensor at the corner of the parking area entrance detects th
 
 ## 3. Project design
 
-**In Sep 28**
+**In Sep 28.**
 
 Firstly, we designed the blueprint of our demo parking lot with CAD. The blueprint of this parking lot is designed with 16 parking spaces and 8 pillars. Four of these parking spaces will be added with the photosensitive sensors in order to fullfill the route planning function. One of these pillars will be equiped with ultrasonic sensor in order to test the collision-avoiding function. The layout of the parking lot is as figure3.1 (left). Since only one photosensitive sensor is provided in the toolkit, we brought other 3 Photoresistor sensors and one ultrasonic sensors from the internet. Then we used the carton made the parking lot model based on the blueprint we designed. The model is shown in the figure3.1 (right).
 
@@ -103,7 +103,7 @@ Apart from the physical model. We also abstracted the physical model into a logi
   Figure3.2 Construction the network of parking space
 </p>
 
-**In Sep 28**
+**In Oct 1.**
 
 The next step is linking the logical model stored in the computer with the physical parking model using sensor techniques and data transmitting techniques. The first one we fullfilled is data transmitting which implement the function that transmit data from raspberry pi to PC using socket programming. We sent these data because we treat our PC as the embedded operating system in the privat car and treat the raspberry pi as the server used in the parking lot. The parking lot (raspberry pi) server will send the parking space information and collision information to the car (PC) so the car can make its own adjustment. The protocol is designed like the below figure After the design the car (PC) can receive the data sensored from the parking lot (raspberry pi) and knew its route planning information. in order to improve the user-friendly experience, we also added voice assistance for different events. Below is the communication protocal we designed.
 
@@ -125,6 +125,8 @@ Then we designed different classes for different actuator including a light sens
   Figure3.4 The UML diagram of differnence sensors
 </p>
 
+**In Oct 3.**
+
 After assigned each class to each sensor. The next question we solved is the multiple data transmission problem. Since the server (Pi) would receive data from four light sensors and we Ultrasonic sensor. It has to encode this information and send to the private car (local computer) and also the private car needs to decode these data. Thus, we used the dictionary structure in python to store these data sensed in the server and send them to private car. And the car will do the data processing and find the shortest path. The data structure and transmission procedure is shown in figure3.5.
 
 <p align="center">
@@ -135,6 +137,8 @@ After assigned each class to each sensor. The next question we solved is the mul
 <p align="center">
   Figure3.5  The data sending procedure
 </p>
+
+**In Oct 7.**
 
 After deployed all the programming part. We connect the circuit. The circuit including four light sensors, four LED lights and one Ultrasonic sensor. In these actuators, four light sensors are used to sense the light intensity in four parking space. Four LED lights are used to show the nearest parking space for cars (i.e if a car enter the parking lot, the LED on the nearest parking space would be lighten, if the car had parked on the nearest parking space the LED light would be switch off). One ultrasonic sensor is installed on a pillar that near the entrance. It will sense the distance between pillars and the car. The circuit is connected as below.
 
@@ -156,6 +160,8 @@ Then we connected the circuit with our physical parking model. We linked the cir
   Figure3.7 The physical model connected with circuit
 </p>
 
+**In Oct 10.**
+
 There is one thing left that even though we have all the sensor in the right place and the sensor can work correctly, people cannot see the sensed data in real time. We try to connect all the light sensors to the openchirp website so all the light sensor data can be visualized on the openchirp website. We first used “wget” command download the “cacert.pem” file from the website. Then followed the tutorial set up our first device and used the template code fullfuilled the function of transmitting data to the openchirp website. The figure below is the visualization of light sensor.
 
 <p align="center">
@@ -165,6 +171,8 @@ There is one thing left that even though we have all the sensor in the right pla
 <p align="center">
   Figure3.8 The openchirp interface  
 </p>
+
+**In Oct 13.**
 
 Then we tested and debugging our code. And finally our project are down. The target parking space is shown in the physical model (the space with lighten LED) and the shortest route is shown in the right. In addition to this. It also equipped with the sound guidance.
 
