@@ -81,6 +81,8 @@ When the ultrasonic sensor at the corner of the parking area entrance detects th
 
 ## 3. Project design
 
+**In Sep 28**
+
 Firstly, we designed the blueprint of our demo parking lot with CAD. The blueprint of this parking lot is designed with 16 parking spaces and 8 pillars. Four of these parking spaces will be added with the photosensitive sensors in order to fullfill the route planning function. One of these pillars will be equiped with ultrasonic sensor in order to test the collision-avoiding function. The layout of the parking lot is as figure3.1 (left). Since only one photosensitive sensor is provided in the toolkit, we brought other 3 Photoresistor sensors and one ultrasonic sensors from the internet. Then we used the carton made the parking lot model based on the blueprint we designed. The model is shown in the figure3.1 (right).
 
 <p align="center">
@@ -100,6 +102,8 @@ Apart from the physical model. We also abstracted the physical model into a logi
 <p align="center">
   Figure3.2 Construction the network of parking space
 </p>
+
+**In Sep 28**
 
 The next step is linking the logical model stored in the computer with the physical parking model using sensor techniques and data transmitting techniques. The first one we fullfilled is data transmitting which implement the function that transmit data from raspberry pi to PC using socket programming. We sent these data because we treat our PC as the embedded operating system in the privat car and treat the raspberry pi as the server used in the parking lot. The parking lot (raspberry pi) server will send the parking space information and collision information to the car (PC) so the car can make its own adjustment. The protocol is designed like the below figure After the design the car (PC) can receive the data sensored from the parking lot (raspberry pi) and knew its route planning information. in order to improve the user-friendly experience, we also added voice assistance for different events. Below is the communication protocal we designed.
 
